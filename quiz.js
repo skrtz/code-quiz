@@ -1,4 +1,8 @@
-// create quiz elements
+// timer
+var time = document.getElementById('time');
+var secondsLeft = 60;
+
+// quiz elements
 var start = document.getElementById('begin-screen');
 
 var div = document.createElement('div');
@@ -62,12 +66,29 @@ document.getElementById('start-game').addEventListener('click', function(){
     displayNextQuestion();
     this.style.display = 'none';
     start.style.display = 'none';
+    // game div pops up after selecting start
     document.body.appendChild(div);
+
+    // timer funtion 
+    function setTime(){
+        var timer = setInterval(function(){
+            secondsLeft--;
+            time.textContent = secondsLeft;
+            if (secondsLeft === 0) {
+                clearInterval(timer);
+                console.log('hi');
+            }
+        }, 1000);
+    }
+    
+    setTime();
 });
 
 function checkAnswer(event){
     if (event.target.textContent === questions[index].answer){
         index++;
         displayNextQuestion();
+    } else {
+        secondsLeft -= 15;
     }
 }
