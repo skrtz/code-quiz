@@ -5,19 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./quiz.css">
-    <title>Document</title>
+    <title>Code Quiz</title>
 </head>
 <body>
     <header>
         <div>
-            <h3 id="time"></h3>
+            <h3 id="time">Time: 60</h3>
         </div>
     </header>
     <main>
         <section id="begin-screen">
-            <h1>Welcome to the quiz!</h1>
+            <h1>Welcome to the worlds first code quiz!</h1>
             <button id="start-game">START</button> 
         </section>   
+
+        <section id="question-section">
+            <h2 id="qs"></h2>
+            <div id="answers">
+                <button id="button1"></button>
+                <button id="button2"></button>
+                <button id="button3"></button>
+                <button id="button4"></button>
+            </div>
+        </section>
+
+        <section id="score-input">
+            <form action="">
+                <h3 id="score"></h3>
+
+                <label for="name">User Name:</label><br>
+                <input type="text" id="username" name="user">
+
+                <button id="submit-btn">submit</button>
+            </form>
+        </section>
+
+        <section id="scoreboard">
+            <h1>Scoreboard</h1>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
     </main>
 <script src="quiz.js"></script>
 </body>

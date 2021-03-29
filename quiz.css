@@ -8,3 +8,25 @@ div {
 main {
     text-align: center; 
 }
+#time {
+    text-align: right;
+}
+#question-section{
+    display: block;
+}
+#answers {
+    display: none;
+}
+#score-input {
+    display: none;
+}
+#scoreboard {
+    display: none;
+    text-align: center;
+}
+li {
+    text-decoration: none;
+}
+#user-name {
+    display: inline-block;
+}
