@@ -108,13 +108,26 @@ document.getElementById('submit-btn').addEventListener('click', function(event){
             name: userInput.value,
             score: score,
         }
+    var highScores = JSON.parse(localStorage.getItem('highScores'));
+    if (!highScores){
+        highScores = [];
+    }
+    highScores.push(userScore)
+
         var userName = document.getElementById('username').value;
-        localStorage.setItem('score', JSON.stringify(userScore));
+        localStorage.setItem('highScores', JSON.stringify(highScores));
         document.querySelector('#score-input').style.display = 'none';
         document.querySelector('#scoreboard').style.display = 'block';
         renderScoreboard();
 })
 
 function renderScoreboard () {
-    var scoreValue = JSON.parse(localStorage.getItem('userScore'));
+    var scoreValues = JSON.parse(localStorage.getItem('highScores'));
+    var ul = document.getElementById('scores');
+    for (var i = 0; i < scoreValues.length; i++){
+        var scoreValue = scoreValues[i];
+        var li = document.createElement('li');
+        li.textContent = scoreValue.name + ': ' + scoreValue.score;
+        ul.appendChild(li);
+    }
 }
